@@ -3,6 +3,8 @@
 
 This application has the CLEAN architecture where it calls a list of artists of iTunes API and shows them in the main view with its details.
 
+The base url of this search engine is https://itunes.apple.com/search?term=jack+johnson
+
 The JSON of the artist object you get is the following:
 
 ```
