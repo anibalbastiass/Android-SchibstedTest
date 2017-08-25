@@ -7,10 +7,12 @@ import com.schebsted.app_test.presentation.view.fragment.NoteEditFragment;
 import com.schebsted.app_test.presentation.view.fragment.NotesFragment;
 import com.schebsted.app_test.presentation.view.fragment.RegisterFragment;
 import com.schebsted.app_test.presentation.view.fragment.ResetPasswordFragment;
+import com.schebsted.app_test.presentation.view.fragment.SearchArtistFragment;
 import com.schebsted.app_test.presentation.view.fragment.SettingsFragment;
 
 public interface FragmentInjector {
 
+    void inject(SearchArtistFragment artistFragment);
     void inject(LoginFragment loginFragment);
     void inject(RegisterFragment registerFragment);
     void inject(NotesFragment notesFragment);

@@ -1,6 +1,7 @@
 package com.schebsted.app_test.data.net;
 
 import com.schebsted.app_test.data.net.wrapper.UserWrapper;
+import com.schebsted.app_test.domain.entity.ArtistEntity;
 import com.schebsted.app_test.domain.entity.MessageEntity;
 import com.schebsted.app_test.domain.entity.NoteEntity;
 import com.schebsted.app_test.domain.entity.UserEntity;
@@ -17,12 +18,14 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import io.reactivex.Observable;
+import retrofit2.http.Query;
 
 public interface RestApi {
 
-    String URL_BASE = "http://192.168.0.10:3000";
-    int API_VERSION = 1;
-    String VERSION_HEADER = "application/vnd.railsapibase.v" + API_VERSION;
+    String URL_BASE = "https://itunes.apple.com";
+
+    @GET("/search")
+    Observable<Response<ArtistEntity>> searchArtists(@Query("term") String artist_name);
 
     @POST("/users")
     Observable<Response<UserEntity>> createUser(@Body UserWrapper userWrapper);

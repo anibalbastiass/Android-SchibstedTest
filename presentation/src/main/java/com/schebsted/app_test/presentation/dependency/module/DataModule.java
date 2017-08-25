@@ -7,10 +7,12 @@ import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.schebsted.app_test.data.net.RestApi;
 import com.schebsted.app_test.data.net.interceptor.HttpInterceptor;
+import com.schebsted.app_test.data.repository.ArtistDataRepository;
 import com.schebsted.app_test.data.repository.NoteDataRepository;
 import com.schebsted.app_test.data.repository.SessionDataRepository;
 import com.schebsted.app_test.data.repository.UserDataRepository;
 import com.schebsted.app_test.data.repository.VersionDataRepository;
+import com.schebsted.app_test.domain.repository.ArtistRepository;
 import com.schebsted.app_test.domain.repository.NoteRepository;
 import com.schebsted.app_test.domain.repository.SessionRepository;
 import com.schebsted.app_test.domain.repository.UserRepository;
@@ -41,7 +43,8 @@ public class DataModule {
                                                 .build();
 
         GsonConverterFactory factory = GsonConverterFactory.create(new GsonBuilder()
-                    .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create());
+                        //.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                        .create());
 
         return new Retrofit.Builder()
                            .baseUrl(RestApi.URL_BASE)
@@ -50,6 +53,12 @@ public class DataModule {
                            .client(client)
                            .build()
                            .create(RestApi.class);
+    }
+
+    @Provides
+    @Singleton
+    ArtistRepository provideArtistRepository(RestApi restApi) {
+        return new ArtistDataRepository(restApi);
     }
 
     @Provides

@@ -2,6 +2,7 @@ package com.schebsted.app_test.data.repository;
 
 import android.content.SharedPreferences;
 
+import com.schebsted.app_test.domain.entity.ArtistEntity;
 import com.schebsted.app_test.domain.entity.UserEntity;
 import com.schebsted.app_test.domain.repository.SessionRepository;
 
@@ -13,6 +14,7 @@ public class SessionDataRepository implements SessionRepository {
 
     private static final String EMAIL = "email";
     private static final String AUTH_TOKEN = "auth_token";
+    private static final String ARTISTS_REALM = "artists_realm";
 
     private final SharedPreferences sharedPreferences;
 
@@ -32,10 +34,27 @@ public class SessionDataRepository implements SessionRepository {
     }
 
     @Override
+    public ArtistEntity getCurrentArtist() {
+        if (sharedPreferences.contains(ARTISTS_REALM)) {
+            ArtistEntity artist = new ArtistEntity(sharedPreferences.getString(ARTISTS_REALM, null));
+            return artist;
+        }
+        return new ArtistEntity();
+    }
+
+    @Override
     public void setCurrentUser(UserEntity user) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(EMAIL, user.getEmail());
         editor.putString(AUTH_TOKEN, user.getAuthToken());
+        editor.apply();
+    }
+
+    @Override
+    public void setCurrentArtists(ArtistEntity user) {
+        // TODO: Save to Realm
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(ARTISTS_REALM, user.getResults().toArray().toString());
         editor.apply();
     }
 

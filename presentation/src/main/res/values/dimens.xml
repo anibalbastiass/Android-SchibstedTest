@@ -10,4 +10,8 @@
 
     <dimen name="textsize_normal">20sp</dimen>
     <dimen name="textsize_small">16sp</dimen>
+    <dimen name="activity_login_container">5dp</dimen>
+    <dimen name="recyclerview_item_car_new">12dp</dimen>
+    <dimen name="recyclerview_item_post_body">12dp</dimen>
+    <dimen name="recyclerview_item_post_title">16dp</dimen>
 </resources>

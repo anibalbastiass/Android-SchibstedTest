@@ -1,11 +1,8 @@
 package com.schebsted.app_test.presentation.view.activity.base;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
 
 import com.schebsted.app_test.data.net.error.RestApiErrorException;
@@ -43,7 +40,7 @@ public abstract class CleanActivity extends BaseActivity implements BaseView {
                     closeAndDisplayLogin();
                     break;
                 case RestApiErrorException.UPGRADE_REQUIRED:
-                    createUpgradeDialog();
+
                     break;
                 default:
                     showMessage(error.getMessage());
@@ -58,24 +55,6 @@ public abstract class CleanActivity extends BaseActivity implements BaseView {
         Intent notesIntent = new Intent(this, LoginActivity.class);
         notesIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(notesIntent);
-    }
-
-    private void createUpgradeDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(getResources().getString(R.string.message_expired) + ".\n" +
-                getResources().getString(R.string.message_update) + ".")
-                .setPositiveButton(R.string.message_ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        navigateToUpgrater();
-                    }
-                }).create().show();
-    }
-
-    private void navigateToUpgrater() {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("market://details?id=com.jordifierro.androidbase"));
-        startActivity(intent);
     }
 
     @Override

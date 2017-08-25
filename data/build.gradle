@@ -55,4 +55,5 @@ dependencies {
     testCompile dataTestDependencies.mockito
     testCompile dataTestDependencies.mockWebServer
     testCompile dataTestDependencies.commonsIO
+    compile 'javax.inject:javax.inject:1'
 }

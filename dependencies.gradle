@@ -8,11 +8,11 @@ ext {
     //Android
     appVersionCode = 1
     appVersionName = '1.0'
-    androidBuildToolsVersion = '25.0.2'
+    androidBuildToolsVersion = '26.0.0'
     androidMinSdkVersion = 15
-    androidTargetSdkVersion = 23
-    androidCompileSdkVersion = 23
-    androidSupportVersion = '23.2.1'
+    androidTargetSdkVersion = 26
+    androidCompileSdkVersion = 26
+    androidSupportVersion = '26.0.1'
 
     //Libraries
     daggerVersion = '2.8'
@@ -71,7 +71,9 @@ ext {
             javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             androidCompatv7:    "com.android.support:appcompat-v7:${androidSupportVersion}",
             androidSupportv4:   "com.android.support:support-v4:${androidSupportVersion}",
-            androidDesign:      "com.android.support:design:${androidSupportVersion}"
+            androidDesign:      "com.android.support:design:${androidSupportVersion}",
+            androidCardView:    "com.android.support:cardview-v7:${androidSupportVersion}",
+            androidRecyclerView:"com.android.support:recyclerview-v7:${androidSupportVersion}"
     ]
     presentationTestDependencies = [
             junit:              "junit:junit:${jUnitVersion}",

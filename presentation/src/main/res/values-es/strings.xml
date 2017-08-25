@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">AndroidBase</string>
+    <string name="app_name">Schebsted Test ABS</string>
 
     <string name="title_activity_login">Entrar</string>
     <string name="title_activity_register">Registro</string>
     <string name="title_activity_settings">Ajustes de usuario</string>
-    <string name="title_activity_main">Tus notas</string>
+    <string name="title_activity_main">Schebsted Test ABS</string>
     <string name="title_activity_terms">Términos y condiciones</string>
     <string name="title_activity_privacy">Política de privacidad</string>
     <string name="title_activity_resetpassword">Cambiar contraseña</string>

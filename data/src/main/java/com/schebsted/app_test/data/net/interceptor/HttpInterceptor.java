@@ -21,8 +21,8 @@ public class HttpInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request().newBuilder()
-                .addHeader("Accept-Language", Locale.getDefault().getLanguage())
-                .addHeader("Accept", RestApi.VERSION_HEADER)
+                //.addHeader("Accept-Language", Locale.getDefault().getLanguage())
+                //.addHeader("Accept", RestApi.VERSION_HEADER)
                 .build();
         return chain.proceed(request);
     }

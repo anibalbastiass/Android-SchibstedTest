@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">AndroidBase</string>
+    <string name="app_name">Schebsted Test ABS</string>
 
     <string name="title_activity_login">Login</string>
     <string name="title_activity_register">Register</string>
     <string name="title_activity_settings">User settings</string>
-    <string name="title_activity_main">Your notes</string>
+    <string name="title_activity_main">Schebsted Test ABS</string>
     <string name="title_activity_terms">Terms and conditions</string>
     <string name="title_activity_privacy">Privacy policy</string>
     <string name="title_activity_resetpassword">Reset Password</string>
@@ -47,5 +47,6 @@
     <string name="message_expired">This version has expired</string>
     <string name="message_update">Please, update the application</string>
     <string name="message_ok">Ok</string>
+    <string name="recyclerview_item_car_new">Evento</string>
 
 </resources>
