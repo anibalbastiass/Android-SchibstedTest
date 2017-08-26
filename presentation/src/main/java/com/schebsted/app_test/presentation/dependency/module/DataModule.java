@@ -8,15 +8,9 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.schebsted.app_test.data.net.RestApi;
 import com.schebsted.app_test.data.net.interceptor.HttpInterceptor;
 import com.schebsted.app_test.data.repository.ArtistDataRepository;
-import com.schebsted.app_test.data.repository.NoteDataRepository;
 import com.schebsted.app_test.data.repository.SessionDataRepository;
-import com.schebsted.app_test.data.repository.UserDataRepository;
-import com.schebsted.app_test.data.repository.VersionDataRepository;
 import com.schebsted.app_test.domain.repository.ArtistRepository;
-import com.schebsted.app_test.domain.repository.NoteRepository;
 import com.schebsted.app_test.domain.repository.SessionRepository;
-import com.schebsted.app_test.domain.repository.UserRepository;
-import com.schebsted.app_test.domain.repository.VersionRepository;
 
 import javax.inject.Singleton;
 
@@ -60,23 +54,4 @@ public class DataModule {
     ArtistRepository provideArtistRepository(RestApi restApi) {
         return new ArtistDataRepository(restApi);
     }
-
-    @Provides
-    @Singleton
-    UserRepository provideUserRepository(RestApi restApi) {
-        return new UserDataRepository(restApi);
-    }
-
-    @Provides
-    @Singleton
-    NoteRepository provideNoteRepository(RestApi restApi) {
-        return new NoteDataRepository(restApi);
-    }
-
-    @Provides
-    @Singleton
-    VersionRepository provideVersionRepository(RestApi restApi) {
-        return new VersionDataRepository(restApi);
-    }
-
 }

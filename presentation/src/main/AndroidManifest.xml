@@ -22,55 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.RegisterActivity"
-            android:label="@string/title_activity_register"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.NoteDetailActivity"
-            android:label="@string/title_activity_note_detail"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.NoteCreateActivity"
-            android:label="@string/title_activity_note_create"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.NoteEditActivity"
-            android:label="@string/title_activity_note_edit"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.TermsActivity"
-            android:label="@string/title_activity_terms"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.PrivacyActivity"
-            android:label="@string/title_activity_privacy"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.schebsted.app_test.presentation.view.activity.ResetPasswordActivity"
-            android:label="@string/title_activity_resetpassword"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

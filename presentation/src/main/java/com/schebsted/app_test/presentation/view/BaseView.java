@@ -12,5 +12,4 @@ public interface BaseView {
     void showMessage(String message);
 
     void close();
-    void closeAndDisplayLogin();
 }

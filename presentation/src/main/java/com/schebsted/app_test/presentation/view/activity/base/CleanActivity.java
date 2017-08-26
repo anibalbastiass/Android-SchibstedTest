@@ -10,7 +10,6 @@ import com.schebsted.app_test.presentation.BaseApplication;
 import com.schebsted.app_test.presentation.R;
 import com.schebsted.app_test.presentation.dependency.component.FragmentInjector;
 import com.schebsted.app_test.presentation.view.BaseView;
-import com.schebsted.app_test.presentation.view.activity.LoginActivity;
 
 public abstract class CleanActivity extends BaseActivity implements BaseView {
 
@@ -37,7 +36,7 @@ public abstract class CleanActivity extends BaseActivity implements BaseView {
         if (error instanceof RestApiErrorException) {
             switch (((RestApiErrorException) error).getStatusCode()) {
                 case RestApiErrorException.UNAUTHORIZED:
-                    closeAndDisplayLogin();
+                    //closeAndDisplayLogin();
                     break;
                 case RestApiErrorException.UPGRADE_REQUIRED:
 
@@ -48,13 +47,6 @@ public abstract class CleanActivity extends BaseActivity implements BaseView {
         }
         else Toast.makeText(context(), getResources().getString(R.string.message_error),
                 Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void closeAndDisplayLogin() {
-        Intent notesIntent = new Intent(this, LoginActivity.class);
-        notesIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(notesIntent);
     }
 
     @Override

@@ -95,9 +95,6 @@ public abstract class BaseFragment extends Fragment implements BaseView {
         ((CleanActivity)getActivity()).close();
     }
 
-    public void closeAndDisplayLogin() {
-        ((CleanActivity)getActivity()).closeAndDisplayLogin();
-    }
 
     protected FragmentInjector getFragmentInjector() {
         return ((CleanActivity)getActivity()).getFragmentInjector();
