@@ -38,7 +38,6 @@ public class SearchArtistFragment extends BaseFragment implements SearchArtistVi
 
     @Bind(R.id.fragment_artists_recyclerview)
     RecyclerView mRecyclerView;
-    private ArtistAdapter adapter;
 
     @Override
     protected void callInjection() {
@@ -69,7 +68,7 @@ public class SearchArtistFragment extends BaseFragment implements SearchArtistVi
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-            adapter = new ArtistAdapter(artists.getResults(),
+            ArtistAdapter adapter = new ArtistAdapter(artists.getResults(),
                     artist -> {
 
                     });
