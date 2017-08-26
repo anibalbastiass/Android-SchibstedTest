@@ -12,6 +12,7 @@ android {
         targetSdkVersion rootProject.ext.androidTargetSdkVersion
         versionCode rootProject.ext.appVersionCode
         versionName rootProject.ext.appVersionName
+        multiDexEnabled true
     }
     compileOptions {
         incremental false

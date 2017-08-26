@@ -48,5 +48,7 @@
     <string name="message_update">Please, update the application</string>
     <string name="message_ok">Ok</string>
     <string name="recyclerview_item_car_new">Evento</string>
+    <string name="search_title">Buscar</string>
+    <string name="empty_text">Ingresa en buscador tu artista preferido</string>
 
 </resources>

@@ -37,15 +37,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             setSupportActionBar(this.toolbar);
             if (this.useBackToolbar()) {
                 if (getSupportActionBar() != null) {
-                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                    getSupportActionBar().setDisplayShowHomeEnabled(true);
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(false); // true
+                    getSupportActionBar().setDisplayShowHomeEnabled(false); // true
                 }
-                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        finish();
-                    }
-                });
+                toolbar.setNavigationOnClickListener(v -> finish());
             }
         } else toolbar.setVisibility(View.GONE);
     }

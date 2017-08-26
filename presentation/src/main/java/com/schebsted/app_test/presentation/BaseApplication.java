@@ -32,5 +32,4 @@ public class BaseApplication extends Application {
         return DaggerActivityComponent.builder()
                 .applicationComponent(this.applicationComponent).build();
     }
-
 }
