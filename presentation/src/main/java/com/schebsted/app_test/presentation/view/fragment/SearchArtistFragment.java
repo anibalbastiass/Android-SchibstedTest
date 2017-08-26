@@ -4,6 +4,9 @@
 
 package com.schebsted.app_test.presentation.view.fragment;
 
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.schebsted.app_test.domain.entity.ArtistEntity;
@@ -11,6 +14,7 @@ import com.schebsted.app_test.presentation.R;
 import com.schebsted.app_test.presentation.presenter.ArtistPresenter;
 import com.schebsted.app_test.presentation.presenter.BasePresenter;
 import com.schebsted.app_test.presentation.view.SearchArtistView;
+import com.schebsted.app_test.presentation.view.adapter.ArtistAdapter;
 
 import javax.inject.Inject;
 
@@ -23,6 +27,10 @@ public class SearchArtistFragment extends BaseFragment implements SearchArtistVi
 
     @Bind(R.id.list)
     TextView artist;
+
+    @Bind(R.id.fragment_artists_recyclerview)
+    RecyclerView mRecyclerView;
+    private ArtistAdapter adapter;
 
     @Override
     protected void callInjection() {
@@ -45,16 +53,20 @@ public class SearchArtistFragment extends BaseFragment implements SearchArtistVi
 
     @Override
     public void viewArtists(ArtistEntity artists) {
-        //((Listener) getActivity()).searchArtist(artists);
-        this.searchArtistPresenter().searchArtists("epica");
-
         // set Adapter for list
-
-
-        try {
+        if (artists.getResults().size() > 0) {
             artist.setText("" + artists.getResults().get(0).getArtistName());
-        } catch (Exception e) {
 
+            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+
+            mRecyclerView.setLayoutManager(mLayoutManager);
+            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+            adapter = new ArtistAdapter(artists.getResults(),
+                    artist -> {
+
+                    });
+            mRecyclerView.setAdapter(adapter);
         }
     }
 }

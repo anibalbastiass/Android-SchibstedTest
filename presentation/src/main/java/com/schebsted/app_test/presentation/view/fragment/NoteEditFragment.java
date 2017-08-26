@@ -23,9 +23,12 @@ public class NoteEditFragment extends BaseFragment implements NoteEditView {
     @Inject
     NoteEditPresenter noteEditPresenter;
 
-    @Bind(R.id.et_title) EditText titleET;
-    @Bind(R.id.et_content) EditText contentET;
-    @Bind(R.id.btn_submit) Button submitButton;
+    @Bind(R.id.et_title)
+    EditText titleET;
+    @Bind(R.id.et_content)
+    EditText contentET;
+    @Bind(R.id.btn_submit)
+    Button submitButton;
 
     @Override
     protected void callInjection() {
@@ -61,13 +64,13 @@ public class NoteEditFragment extends BaseFragment implements NoteEditView {
 
     @OnClick(R.id.btn_submit)
     public void updateNoteButtonPressed() {
-        this.noteEditPresenter.updateNote(  titleET.getText().toString(),
-                                            contentET.getText().toString());
+        this.noteEditPresenter.updateNote(titleET.getText().toString(),
+                contentET.getText().toString());
     }
 
     @Override
     public int getNoteId() {
-        return ((Listener)getActivity()).getNoteId();
+        return ((Listener) getActivity()).getNoteId();
     }
 
     public interface Listener {

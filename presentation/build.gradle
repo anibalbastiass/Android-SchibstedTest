@@ -51,6 +51,7 @@ dependencies {
     compile presentationDependencies.androidRecyclerView
 
     compile presentationDependencies.dagger
+    compile presentationDependencies.glide
     compile presentationDependencies.butterKnife
     compile presentationDependencies.javaxAnnotation
     compile presentationDependencies.rxJava

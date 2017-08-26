@@ -34,6 +34,7 @@ public class ArtistPresenter extends BasePresenter implements Presenter {
     @Override
     public void resume() {
         //this.showLoader();
+        searchArtists("sonata arctica");
     }
 
     @Override
@@ -49,13 +50,10 @@ public class ArtistPresenter extends BasePresenter implements Presenter {
     }
 
     protected class ArtistSubscriber extends BaseSubscriber<ArtistEntity> {
-
         @Override
         public void onNext(ArtistEntity artist) {
             ArtistPresenter.this.hideLoader();
             ArtistPresenter.this.searchArtistView.viewArtists(artist);
         }
-
     }
-
 }
