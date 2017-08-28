@@ -50,5 +50,6 @@
     <string name="recyclerview_item_car_new">Evento</string>
     <string name="search_title">Buscar</string>
     <string name="empty_text">Ingresa en buscador tu artista preferido</string>
+    <string name="search_title1">Buscando ...</string>
 
 </resources>

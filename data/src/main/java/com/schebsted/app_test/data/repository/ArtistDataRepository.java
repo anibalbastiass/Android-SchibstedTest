@@ -4,12 +4,9 @@
 
 package com.schebsted.app_test.data.repository;
 
-import android.util.Log;
-
 import com.schebsted.app_test.data.net.RestApi;
 import com.schebsted.app_test.domain.entity.ArtistEntity;
 import com.schebsted.app_test.domain.repository.ArtistRepository;
-
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

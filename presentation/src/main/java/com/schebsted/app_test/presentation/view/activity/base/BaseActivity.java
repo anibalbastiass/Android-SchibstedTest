@@ -69,6 +69,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void showLoader() {
         if (this.progressDialog == null) this.progressDialog = new ProgressDialog(this);
+        this.progressDialog.setMessage(getString(R.string.search_title1));
         this.progressDialog.show();
     }
 
