@@ -41,3 +41,7 @@ The JSON of the artist object you get is the following:
 ```
 
 This object is parsed and the data is displayed in the view
+
+## Screenshots
+
+![Song list](https://raw.githubusercontent.com/anibalbastiass/Android-SchibstedTest/master/screenshots/device-2019-12-02-103733.png)
